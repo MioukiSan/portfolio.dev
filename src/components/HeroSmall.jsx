@@ -19,16 +19,12 @@ const HeroSmall = () => {
   const { theme } = useTheme();
   const isDarkMode = theme === "dark";
 
-  const Niche = [
-    "Web Developer",
-    "Freelancer",
-    "Graphic Designer",
-    "UI/UX Designer",
-    "Photographer",
-    "Video Editor",
-  ];
-
   const [index, setIndex] = useState(0);
+  const [imageSrc, setImageSrc] = useState(isDarkMode ? Night : Day);
+
+  useEffect(() => {
+    setImageSrc(isDarkMode ? Night : Day);
+  }, [isDarkMode]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -38,19 +34,27 @@ const HeroSmall = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const Niche = [
+    "Web Developer",
+    "Freelancer",
+    "Graphic Designer",
+    "UI/UX Designer",
+    "Photographer",
+    "Video Editor",
+  ];
+
   return (
-    <div className="flex flex-col justify-center min-h-screen">
-      {/* CONTENT + IMAGE SIDE BY SIDE */}
+    <div className="flex flex-col justify-center lg:min-h-screen">
       <div className="flex flex-row justify-center">
-        <div className="flex flex-col text-left justify-center">
-          <span className="lg:text-3xl md:text-xl text-lg font-bold text-gray-500 italic">
+        <div className="flex flex-col text-left justify-center lg:ml-10">
+          <span className="lg:text-3xl md:text-5xl text-lg font-bold text-gray-500 italic">
             I am Renz, a
           </span>
 
           <motion.span
             key={index}
             {...animationNiche}
-            className="lg:text-5xl md:text-2xl text-lg font-extrabold italic"
+            className="lg:text-5xl md:text-5xl text-lg font-extrabold italic"
           >
             <Typewriter
               options={{
@@ -64,33 +68,36 @@ const HeroSmall = () => {
             />
           </motion.span>
 
-          <span className="text-lg italic text-gray-500">
+          <span className="text-lg italic text-gray-500 w-95 mt-5">
             A tech-savvy individual passionate about the IT industry, always
             learning and exploring new technologies.
           </span>
+          <span className="hidden md:flex lg:hidden md:text-lg font-bold italic w-70 my-3">
+            What do I do?
+          </span>
+          <span className="hidden md:flex lg:hidden md:text-sm text-gray-400 italic mr-7 w-80">
+            I focus on building practical and innovative solutions across
+            software, hardware, and automation. My work involves exploring
+            tools, experimenting with new technologies, and developing projects
+            that blend creativity with technical problem-solving.
+          </span>
         </div>
-
-        {/* IMAGE */}
         <div className="flex justify-center">
           <motion.span
             {...animationNiche}
-            className="flex justify-center items-center mx-5"
+            className="flex justify-center items-center mx-auto lg:mr-10"
           >
             <img
-              src={isDarkMode ? Night : Day}
+              src={imageSrc}
               alt={isDarkMode ? "Renz at night" : "Renz at day"}
-              className="lg:w-28 md:w-52 w-40 mask-b-from-50% lg:max-w-xs rounded-full shadow-lg mask-clip-border"
-              onMouseEnter={(e) =>
-                (e.currentTarget.src = isDarkMode ? NightHand : DayHand)
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.src = isDarkMode ? Night : Day)
-              }
+              className="lg:w-28 md:w-60 w-35 mask-b-from-50% lg:max-w-xs rounded-full shadow-lg mask-clip-border"
+              onMouseEnter={() => setImageSrc(isDarkMode ? NightHand : DayHand)}
+              onMouseLeave={() => setImageSrc(isDarkMode ? Night : Day)}
             />
           </motion.span>
         </div>
       </div>
-      <div className="mt-4 flex flex-col">
+      <div className="md:hidden flex lg:flex lg:flex-col mt-4 ml-5">
         <span className="text-lg font-bold italic">What do I do?</span>
         <span className="text-sm text-gray-400 italic mr-7">
           I focus on building practical and innovative solutions across

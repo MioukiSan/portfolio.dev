@@ -16,11 +16,11 @@ function ThemeChange() {
     setTheme(newTheme);
   };
   return (
-    <span className="bg-background text-popover-foreground w-fit rounded-full flex justify-center items-center m-2 p-2 flex flex-col">
+    <span className="bg-background text-popover-foreground w-fit rounded-full m-20 p-2">
       <button onClick={handleThemeChange}>
         {themeIcons[theme] || <Sun /> /* Fallback to a default icon */}
       </button>
-      <button>Row</button>
+      <button></button>
     </span>
   );
 }

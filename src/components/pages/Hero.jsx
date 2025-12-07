@@ -73,7 +73,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-sm border border-gray-100 bg-transparent rounded-sm px-1 py-1
              hover:bg-red-600 hover:text-white transition-colors duration-200 w-40 mt-4 flex justify-center items-center"
-            onClick={() => navigate("/App")}
+            onClick={() => navigate("/App", { state: { danger: true } })}
           >
             &lt;ClickBait Careful
             <Bomb />

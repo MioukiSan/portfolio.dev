@@ -13,7 +13,7 @@ const items = [
 
 const Navigation = () => {
   return (
-    <div className="mt-5 hidden lg:block md:hidden">
+    <div className="lg:mt-5 hidden lg:block md:hidden lg:ml-10">
       {items.map((item, index) => (
         <div key={item} className="flex items-center gap-2">
           <span className="h-[1px] w-24 bg-gray-400"></span>

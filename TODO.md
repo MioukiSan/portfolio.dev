@@ -1,2 +1,0 @@
-- [ ] Update App.jsx to manage loading state and add AnimatePresence
-- [ ] Update Preloading.jsx to include exit animation and remove local state
