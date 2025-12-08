@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import Typewriter from "typewriter-effect";
 import { useTheme } from "@/components/theme-provider";
 import Navigation from "@/components/Navigation";
+import Verified from "@/assets/Verified.png";
 
 import Day from "@/assets/Day.jpg";
 import DayHand from "@/assets/DayHand.jpg";
@@ -45,16 +46,26 @@ const HeroSmall = () => {
 
   return (
     <div className="flex flex-col justify-center lg:min-h-screen">
-      <div className="flex flex-row justify-center">
-        <div className="flex flex-col text-left justify-center lg:ml-10">
-          <span className="lg:text-3xl md:text-5xl text-lg font-bold text-gray-500 italic">
-            I am Renz, a
-          </span>
-
+      <div className="flex flex-row lg:mx-auto md:ml-5 mx-auto">
+        <div className="flex flex-col text-left justify-center sm:mx-auto">
+          <div className="flex flex-row gap-3 items-center">
+            <span className="lg:text-3xl md:text-4xl text-md font-bold">
+              Renz Norman Palma
+            </span>
+            <img
+              className="
+    lg:w-5 lg:h-5
+    md:w-10 md:h-10
+    w-5 h-5
+  "
+              src={Verified}
+              alt="Verified"
+            />
+          </div>
           <motion.span
             key={index}
             {...animationNiche}
-            className="lg:text-5xl md:text-5xl text-lg font-extrabold italic"
+            className="lg:text-5xl md:text-5xl text-lg font-extrabold italic my-1"
           >
             <Typewriter
               options={{
@@ -68,14 +79,14 @@ const HeroSmall = () => {
             />
           </motion.span>
 
-          <span className="text-lg italic text-gray-500 w-95 mt-5">
+          <span className="lg:text-lg md:text-xl text-sm italic w-59 md:w-90 lg:w-95">
             A tech-savvy individual passionate about the IT industry, always
             learning and exploring new technologies.
           </span>
-          <span className="hidden md:flex lg:hidden md:text-lg font-bold italic w-70 my-3">
+          <span className="hidden md:flex lg:hidden md:text-lg font-bold italic w-70 my-2">
             What do I do?
           </span>
-          <span className="hidden md:flex lg:hidden md:text-sm text-gray-400 italic mr-7 w-80">
+          <span className="hidden md:flex lg:hidden md:text-sm italic mr-7 w-100">
             I focus on building practical and innovative solutions across
             software, hardware, and automation. My work involves exploring
             tools, experimenting with new technologies, and developing projects
@@ -90,16 +101,16 @@ const HeroSmall = () => {
             <img
               src={imageSrc}
               alt={isDarkMode ? "Renz at night" : "Renz at day"}
-              className="lg:w-28 md:w-60 w-35 mask-b-from-50% lg:max-w-xs rounded-full shadow-lg mask-clip-border"
+              className="lg:w-28 md:w-60 w-30 mask-b-from-50% lg:max-w-xs rounded-full shadow-lg mask-clip-border"
               onMouseEnter={() => setImageSrc(isDarkMode ? NightHand : DayHand)}
               onMouseLeave={() => setImageSrc(isDarkMode ? Night : Day)}
             />
           </motion.span>
         </div>
       </div>
-      <div className="md:hidden flex lg:flex lg:flex-col mt-4 ml-5">
+      <div className="md:hidden flex flex-col lg:flex lg:flex-col lg:mt-4 ml-4">
         <span className="text-lg font-bold italic">What do I do?</span>
-        <span className="text-sm text-gray-400 italic mr-7">
+        <span className="text-sm italic mr-7">
           I focus on building practical and innovative solutions across
           software, hardware, and automation. My work involves exploring tools,
           experimenting with new technologies, and developing projects that

@@ -16,7 +16,7 @@ function ThemeChange() {
     setTheme(newTheme);
   };
   return (
-    <span className="bg-background text-popover-foreground w-fit rounded-full m-20 p-2">
+    <span className="bg-background text-popover-foreground w-fit rounded-full">
       <button onClick={handleThemeChange}>
         {themeIcons[theme] || <Sun /> /* Fallback to a default icon */}
       </button>
