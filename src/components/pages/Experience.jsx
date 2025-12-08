@@ -72,16 +72,20 @@ const Experience = () => {
     },
   ];
   return (
-    <div className="flex flex-col mx-10">
-      <span className="lg:text-2xl font-extrabold">Experience</span>
-
-      <div className="flex flex-col pl-6">
+    <div className="flex flex-col md:mx-5 lg:mx-5 mx-2 p-2">
+      <span className="lg:text-2xl md:text-2xl font-extrabold text-lg ml-2">
+        Experience
+      </span>
+      <div className="flex flex-col">
         {ExperienceData.map((experience) => (
-          <div key={experience.id} className="relative">
-            <div className="flex flex-col border-b border-dashed pt-2">
-              <div className="grid grid-cols-3 gap-4">
+          <div
+            key={experience.id}
+            className="relative transition-all duration-200 hover:-translate-y-1 hover:shadow-sm p-2 rounded-lg border-b lg:ml-5"
+          >
+            <div className="flex flex-col">
+              <div className="grid grid-cols-3 gap-2">
                 <div className="text-start col-span-2">
-                  <span className="font-bold text-lg">
+                  <span className="font-bold text-sm md:text-md lg:text-lg">
                     {experience.position}
                   </span>
                 </div>
@@ -92,12 +96,7 @@ const Experience = () => {
                 </div>
               </div>
               <span className="text-md italic">{experience.company}</span>
-              <Accordion
-                type="single"
-                collapsible
-                className="w-full"
-                defaultValue="item-1"
-              >
+              <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1">
                   <AccordionTrigger></AccordionTrigger>
                   <AccordionContent className="flex flex-col gap-4 text-balance">

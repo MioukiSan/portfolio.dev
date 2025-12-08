@@ -16,7 +16,7 @@ const animationNiche = {
   transition: { duration: 0.5, ease: "easeInOut" },
 };
 
-const HeroSmall = () => {
+const HeroSmall = ({ activeSection, scrollToSection }) => {
   const { theme } = useTheme();
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -55,8 +55,8 @@ const HeroSmall = () => {
 
   return (
     <div className="flex flex-col justify-center lg:min-h-screen">
-      <div className="flex flex-row lg:mx-auto md:ml-5 mx-auto">
-        <div className="flex flex-col text-left justify-center sm:mx-auto">
+      <div className="flex flex-row lg:mx-auto md:mx-auto ml-5">
+        <div className="flex flex-col text-left justify-center">
           <div className="flex flex-row gap-3 items-center">
             <span className="lg:text-3xl md:text-4xl text-md font-bold">
               Renz Norman Palma
@@ -117,7 +117,7 @@ const HeroSmall = () => {
           </motion.span>
         </div>
       </div>
-      <div className="md:hidden flex flex-col lg:flex lg:flex-col lg:mt-4 ml-4">
+      <div className="md:hidden flex flex-col lg:flex lg:flex-col lg:mt-4 lg:ml-0 ml-5">
         <span className="text-lg font-bold italic">What do I do?</span>
         <span className="text-sm italic mr-7">
           I focus on building practical and innovative solutions across
@@ -126,7 +126,10 @@ const HeroSmall = () => {
           blend creativity with technical problem-solving.
         </span>
       </div>
-      <Navigation />
+      <Navigation
+        activeSection={activeSection}
+        scrollToSection={scrollToSection}
+      />
     </div>
   );
 };

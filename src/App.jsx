@@ -13,7 +13,7 @@ function App() {
           <Route path="/App" element={<AppInner />} />
         </Routes>
       </div>
-      <div className="absolute top-0 right-0 font-lato">
+      <div className="fixed top-4 right-4 z-50">
         <ThemeChange />
         <Preloading />
       </div>

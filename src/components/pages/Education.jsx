@@ -16,40 +16,45 @@ const Experience = () => {
       id: "sh",
       school: "Balogo National High School",
       sy: "2018-2020",
-      strand_course: "Technical Vocational Livelihood",
+      strand_course: "Technical Vocational Livelihood (ICT)",
       honor: "With Honor",
       logo: BNHS,
     },
   ];
+
   return (
-    <div className="flex flex-col mx-10">
-      <span className="lg:text-2xl font-extrabold mt-5">Education</span>
-      <div className="flex flex-col pl-6">
+    <div className="flex flex-col mx-5">
+      <span className="lg:text-2xl md:text-2xl font-extrabold text-lg mt-3 ml-2">
+        Education
+      </span>
+
+      <div className="flex flex-col space-y-4">
         {EducationEXP.map((education) => (
           <div
             key={education.id}
-            className="relative border-b border-dashed py-2 flex items-center gap-4"
+            className="border-b rounded-lg pb-4 flex items-center gap-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-md p-2 lg:ml-5"
           >
             <img
               className="w-16 h-16 object-contain"
               src={education.logo}
               alt={`${education.school} logo`}
             />
-            <div className="flex-col flex-grow">
-              <div className="flex justify-between items-baseline">
+            <div className="flex flex-col grow">
+              <div className="flex justify-between items-center">
                 <span className="font-bold text-lg">{education.school}</span>
+
                 <span className="text-sm italic font-light">
                   {education.sy}
                 </span>
               </div>
-              <div className="flex flex-col">
-                <span className="text-md italic">
-                  {education.strand_course}
-                </span>
-                <span className="text-sm font-light italic">
-                  {education.honor}
-                </span>
-              </div>
+
+              <span className="text-base italic">
+                {education.strand_course}
+              </span>
+
+              <span className="text-sm italic font-light">
+                {education.honor}
+              </span>
             </div>
           </div>
         ))}

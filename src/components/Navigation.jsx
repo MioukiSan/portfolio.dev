@@ -1,28 +1,44 @@
 import React from "react";
 
 const items = [
-  "Resume",
-  "Experience",
-  "Education",
-  "Skills",
-  "Projects",
-  "Certificates",
-  "Gigs",
-  "Contact",
+  { id: "resume", label: "Resume" },
+  { id: "exp", label: "Experience" },
+  { id: "edu", label: "Education" },
+  { id: "skill", label: "Skills" },
+  { id: "project", label: "Projects" },
+  { id: "cert", label: "Certificates" },
+  { id: "gigs", label: "Gigs" },
+  { id: "contact", label: "Contact" },
 ];
 
-const Navigation = () => {
+const Navigation = ({ activeSection, scrollToSection }) => {
   return (
-    <div className="lg:mt-5 hidden lg:block md:hidden lg:ml-10">
-      {items.map((item, index) => (
-        <div key={item} className="flex items-center gap-2">
-          <span className="h-[1px] w-24 bg-gray-400"></span>
-          <span className={index === 0 ? "italic text-lg" : "text-secondary"}>
-            {item}
+    <nav className="lg:mt-5 hidden lg:flex lg:flex-col md:hidden">
+      {items.map((item) => (
+        <button
+          key={item.id}
+          onClick={() => scrollToSection?.(item.id)}
+          className="flex flex-row items-start gap-1 px-1 text-left transition-all"
+        >
+          <span
+            className={`block self-center transition-all ${
+              activeSection === item.id
+                ? "bg-black w-15 h-1"
+                : "bg-black h-0.5 w-10"
+            }`}
+          ></span>
+          <span
+            className={`transition-all ${
+              activeSection === item.id
+                ? "font-bold italic text-black text-xl"
+                : "font-medium"
+            }`}
+          >
+            {item.label}
           </span>
-        </div>
+        </button>
       ))}
-    </div>
+    </nav>
   );
 };
 

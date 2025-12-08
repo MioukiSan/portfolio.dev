@@ -4,7 +4,9 @@ import { href } from "react-router-dom";
 const Resume = () => {
   return (
     <div className="justify-center lg:mt-12 mx-5 mt-5">
-      <span className="lg:text-2xl font-extrabold lg:ml-5">Resume</span>
+      <span className="lg:text-2xl md:text-2xl font-extrabold text-lg ml-2">
+        Resume
+      </span>
       <div className="flex flex-col items-center lg:mb-10 mt-3">
         <iframe
           src={RESUMEPDF}
