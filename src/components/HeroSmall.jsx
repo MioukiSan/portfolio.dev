@@ -18,10 +18,19 @@ const animationNiche = {
 
 const HeroSmall = () => {
   const { theme } = useTheme();
-  const isDarkMode = theme === "dark";
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const [index, setIndex] = useState(0);
   const [imageSrc, setImageSrc] = useState(isDarkMode ? Night : Day);
+
+  useEffect(() => {
+    // Determine if dark mode is active, considering the 'system' theme
+    const darkMode =
+      theme === "dark" ||
+      (theme === "system" &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
+    setIsDarkMode(darkMode);
+  }, [theme]);
 
   useEffect(() => {
     setImageSrc(isDarkMode ? Night : Day);

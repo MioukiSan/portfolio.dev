@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import Resume from "@/components/pages/Resume";
 import { useLocation, useNavigate } from "react-router-dom";
 import Experience from "@/components/pages/Experience";
+import Education from "@/components/pages/Education";
 
 import Navigation from "@/components/Navigation";
 import HeroSmall from "@/components/HeroSmall";
@@ -45,6 +46,7 @@ const App = () => {
       <div className="lg:basis-65/100 flex flex-col text-left">
         <Resume />
         <Experience />
+        <Education />
       </div>
     </motion.div>
   );

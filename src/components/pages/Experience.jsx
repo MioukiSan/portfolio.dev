@@ -1,7 +1,28 @@
 import React from "react";
+import BNHS from "@/assets/bns.png";
+import BUP from "@/assets/BUP.png";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Experience = () => {
   const ExperienceData = [
+    {
+      id: "job-gov-employee",
+      position: "Government Employee (Casual)",
+      company: "Local Government Unit, Municipality of Oas",
+      start: "July 2025",
+      end: "Present",
+      logo: BUP,
+      roles: [
+        "Provides IT support for all departments.",
+        "Handles the implementation of digitalization initiatives for the municipality.",
+        "Supports procurement of supplies and equipment.",
+      ],
+    },
     {
       id: "job-it-support",
       position: "IT Support",
@@ -23,29 +44,33 @@ const Experience = () => {
       company: "Department of Science and Technology V",
       start: "February 2024",
       end: "June 2024",
-      logo: "",
+      logo: BNHS,
       roles: [
         "Created multimedia tasks.",
         "Published a job hiring webapp for Department of Science and Technology Region 5.",
         "Performed troubleshooting and network security-related tasks.",
       ],
     },
-
-    {
-      id: "job-gov-employee",
-      position: "Government Employee (Casual)",
-      company: "Local Government Unit, Municipality of Oas",
-      start: "July 2025",
-      end: "Present",
-      logo: "",
-      roles: [
-        "Provides IT support for all departments.",
-        "Handles the implementation of digitalization initiatives for the municipality.",
-        "Supports procurement of supplies and equipment.",
-      ],
-    },
   ];
 
+  const EducationEXP = [
+    {
+      id: "college",
+      school: "Bicol University Polangui",
+      sy: "2020-2024",
+      strand_course: "Bachelor of Science in Information Technology",
+      honor: "Cum Laude",
+      logo: BUP,
+    },
+    {
+      id: "sh",
+      school: "Balogo National High School",
+      sy: "2018-2020",
+      strand_course: "Technical Vocational Livelihood",
+      honor: "With Honor",
+      logo: BNHS,
+    },
+  ];
   return (
     <div className="flex flex-col mx-10">
       <span className="lg:text-2xl font-extrabold">Experience</span>
@@ -53,7 +78,7 @@ const Experience = () => {
       <div className="flex flex-col pl-6">
         {ExperienceData.map((experience) => (
           <div key={experience.id} className="relative">
-            <div className="flex flex-col border-b border-dashed py-2">
+            <div className="flex flex-col border-b border-dashed pt-2">
               <div className="grid grid-cols-3 gap-4">
                 <div className="text-start col-span-2">
                   <span className="font-bold text-lg">
@@ -61,27 +86,35 @@ const Experience = () => {
                   </span>
                 </div>
                 <div className="text-end text-sm italic">
-                  <span className="text-gray-500">{experience.start}</span>
-                  {" - "}
-                  <span className="text-gray-500">{experience.end}</span>
+                  <span className="font-light">
+                    {experience.start} - {experience.end}
+                  </span>
                 </div>
               </div>
-              <span className="text-gray-500 text-md italic -mt-2 mb-1">
-                {experience.company}
-              </span>
-
-              <ul className="text-gray-500 pl-5 list-disc">
-                {experience.roles.map((role, i) => (
-                  <li key={i} className="text-sm">
-                    {role}
-                  </li>
-                ))}
-              </ul>
+              <span className="text-md italic">{experience.company}</span>
+              <Accordion
+                type="single"
+                collapsible
+                className="w-full"
+                defaultValue="item-1"
+              >
+                <AccordionItem value="item-1">
+                  <AccordionTrigger></AccordionTrigger>
+                  <AccordionContent className="flex flex-col gap-4 text-balance">
+                    <ul className="pl-5 list-disc">
+                      {experience.roles.map((role, i) => (
+                        <li key={i} className="text-sm">
+                          {role}
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </div>
         ))}
       </div>
-      <span className="lg:text-2xl font-extrabold mb-4 mt-5">Education</span>
     </div>
   );
 };
