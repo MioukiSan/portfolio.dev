@@ -47,7 +47,7 @@ const Experience = () => {
       logo: BNHS,
       roles: [
         "Created multimedia tasks.",
-        "Published a job hiring webapp for Department of Science and Technology Region 5.",
+        "Created a job hiring webapp for Department of Science and Technology Region 5.",
         "Performed troubleshooting and network security-related tasks.",
       ],
     },

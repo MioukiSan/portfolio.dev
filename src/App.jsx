@@ -10,7 +10,7 @@ function App() {
       <div className="font-lato">
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/App" element={<AppInner />} />
+          <Route path="/Portfolio" element={<AppInner />} />
         </Routes>
       </div>
       <div className="absolute top-4 right-4 z-50">
