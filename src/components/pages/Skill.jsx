@@ -64,9 +64,10 @@ const Skills = () => {
 
   return (
     <div className="flex flex-col md:mx-5 lg:mx-5 ml-5 mt-5">
-      <span className="lg:text-2xl md:text-2xl font-extrabold text-lg ml-3">
+      <span className="lg:text-2xl md:text-2xl font-extrabold text-lg mt-3">
         Skills
       </span>
+
       <div className="mt-5 px-5">
         <div className="grid lg:grid-cols-2 md:grid-cols-3 md:grid-rows-2 lg:grid-rows-3 gap-2">
           {skills.map((skill, index) => (
@@ -76,8 +77,10 @@ const Skills = () => {
             >
               <img src={skill.logo} alt={skill.title} className="w-15 h-15" />
               <div>
-                <span className="font-bold text-lg block">{skill.title}</span>
-                <span className="text-sm italic block leading-relaxed">
+                <span className="font-bold text-md lg:text-lg md:text-lg block">
+                  {skill.title}
+                </span>
+                <span className="text-xs lg:text-sm md:text-sm italic block leading-relaxed">
                   {skill.items.join(", ")}
                 </span>
               </div>

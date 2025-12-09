@@ -8,8 +8,11 @@ import Experience from "@/components/pages/Experience";
 import Education from "@/components/pages/Education";
 import Skill from "@/components/pages/Skill";
 import Project from "@/components/pages/Project";
+import Certification from "@/components/pages/Certification";
+import Contact from "@/components/pages/Contact";
 
 import HeroSmall from "@/components/HeroSmall";
+import Chatbox from "@/components/Chatbox";
 
 const App = () => {
   const state = useLocation().state;
@@ -42,6 +45,8 @@ const App = () => {
     edu: useRef(null),
     skill: useRef(null),
     project: useRef(null),
+    cert: useRef(null),
+    contact: useRef(null),
   };
 
   // 🔹 Function to scroll to a section
@@ -102,7 +107,14 @@ const App = () => {
         </section>
         <section id="project" ref={sections.project}>
           <Project />
+          <section id="cert" ref={sections.cert}>
+            <Certification />
+          </section>
+          <section id="contact  " ref={sections.contact}>
+            <Contact />
+          </section>
         </section>
+        <Chatbox />
       </div>
     </motion.div>
   );

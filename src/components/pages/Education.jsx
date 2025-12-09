@@ -24,7 +24,7 @@ const Experience = () => {
 
   return (
     <div className="flex flex-col mx-5">
-      <span className="lg:text-2xl md:text-2xl font-extrabold text-lg mt-3 ml-2">
+      <span className="lg:text-2xl md:text-2xl font-extrabold text-lg mt-3">
         Education
       </span>
 
@@ -35,20 +35,23 @@ const Experience = () => {
             className="border-b rounded-lg pb-4 flex items-center gap-4 transition-all duration-200 hover:-translate-y-1 hover:shadow-md p-2 lg:ml-5"
           >
             <img
-              className="w-16 h-16 object-contain"
+              className="w-10 h-10 md:w-16 md:h-16 lg:w-16 lg:h-16 object-contain"
               src={education.logo}
               alt={`${education.school} logo`}
             />
+
             <div className="flex flex-col grow">
               <div className="flex justify-between items-center">
-                <span className="font-bold text-lg">{education.school}</span>
+                <span className="font-bold md:text-lg text-sm lg:text-lg">
+                  {education.school}
+                </span>
 
                 <span className="text-sm italic font-light">
                   {education.sy}
                 </span>
               </div>
 
-              <span className="text-base italic">
+              <span className="text-sm italic text-bold">
                 {education.strand_course}
               </span>
 

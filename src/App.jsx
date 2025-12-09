@@ -13,9 +13,12 @@ function App() {
           <Route path="/App" element={<AppInner />} />
         </Routes>
       </div>
-      <div className="fixed top-4 right-4 z-50">
+      <div className="absolute top-4 right-4 z-50">
         <ThemeChange />
         <Preloading />
+      </div>
+      <div className="mx-auto flex justify-center items-center text-center border-t mt-10 py-3 w-full">
+        <span>© 2025. All rights reserved.</span>
       </div>
     </Router>
   );

@@ -6,7 +6,7 @@ const items = [
   { id: "edu", label: "Education" },
   { id: "skill", label: "Skills" },
   { id: "project", label: "Projects" },
-  { id: "cert", label: "Certificates" },
+  { id: "cert", label: "Certification" },
   { id: "gigs", label: "Gigs" },
   { id: "contact", label: "Contact" },
 ];
@@ -21,16 +21,17 @@ const Navigation = ({ activeSection, scrollToSection }) => {
           className="flex flex-row items-start gap-1 px-1 text-left transition-all"
         >
           <span
-            className={`block self-center transition-all ${
+            className={`block light:bg-gray-500 dark:bg-white self-center transition-all ${
               activeSection === item.id
-                ? "bg-black w-15 h-1"
-                : "bg-black h-0.5 w-10"
+                ? "w-15 h-2 bg-black"
+                : "h-1 bg-black w-10"
             }`}
           ></span>
+
           <span
             className={`transition-all ${
               activeSection === item.id
-                ? "font-bold italic text-black text-xl"
+                ? "font-bold italic light:text-black dark:text-white text-xl"
                 : "font-medium"
             }`}
           >

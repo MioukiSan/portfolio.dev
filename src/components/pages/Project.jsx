@@ -12,7 +12,7 @@ import CSPC from "@/assets/cspc_bg.jpg";
 
 // Single project card component
 const ProjectCard = ({ project }) => (
-  <div className="flex flex-row items-start gap-3 p-2 transition-all duration-200 hover:-translate-y-1 hover:shadow-md rounded-lg border-b shadow-sm">
+  <div className="flex lg:flex-row md:flex-row flex-col items-start gap-3 p-2 transition-all duration-200 hover:-translate-y-1 hover:shadow-md rounded-lg border-b shadow-sm">
     {project.photo ? (
       <img
         src={project.photo}
@@ -20,12 +20,14 @@ const ProjectCard = ({ project }) => (
         className="w-40 h-32 object-cover rounded-md"
       />
     ) : (
-      <div className="w-32 h-32 bg-gray-200 flex items-center justify-center rounded-md italic font-bold text-center p-2">
+      <div className=":h-32 w-full lg:w-32 md:w-32 bg-gray-200 flex items-center justify-center rounded-md italic font-bold text-center p-2">
         {project.title}
       </div>
     )}
     <div className="flex flex-col flex-1">
-      <span className="font-bold text-lg">{project.title}</span>
+      <span className="font-bold md:text-lg text-md lg:text-lg">
+        {project.title}
+      </span>
       <span className="text-xs italic leading-relaxed mt-1">
         {project.description}
       </span>
@@ -115,16 +117,16 @@ const Projects = () => {
   const archivedProjects = projects.slice(3);
 
   return (
-    <div className="flex flex-col lg:mt-8 ml-5">
-      <span className="lg:text-2xl md:text-2xl font-extrabold text-lg ml-5">
+    <div className="flex flex-col lg:mt-8 mt-5 ml-5">
+      <span className="lg:text-2xl md:text-2xl font-extrabold text-lg">
         Projects
       </span>
-      <span className="font-extralight italic block lg:text-left mx-5">
+      <span className="font-extralight italic block lg:text-left">
         Checkout some of my projects, showcasing skills in web development and
         programming.
       </span>
 
-      <div className="flex flex-col mt-5 px-5 lg:px-3 space-y-2 mx-5">
+      <div className="flex flex-col mt-5 px-5 lg:px-3 space-y-2 lg:mx-5">
         {visibleProjects.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}

@@ -72,8 +72,8 @@ const Experience = () => {
     },
   ];
   return (
-    <div className="flex flex-col md:mx-5 lg:mx-5 mx-2 p-2">
-      <span className="lg:text-2xl md:text-2xl font-extrabold text-lg ml-2">
+    <div className="flex flex-col md:mx-5 lg:mx-3 mx-2 p-2">
+      <span className="lg:text-2xl md:text-2xl font-extrabold text-lg">
         Experience
       </span>
       <div className="flex flex-col">
@@ -83,13 +83,13 @@ const Experience = () => {
             className="relative transition-all duration-200 hover:-translate-y-1 hover:shadow-sm p-2 rounded-lg border-b lg:ml-5"
           >
             <div className="flex flex-col">
-              <div className="grid grid-cols-3 gap-2">
-                <div className="text-start col-span-2">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
+                <div className="text-start lg:col-span-2 md:col-span-2 col-span-1">
                   <span className="font-bold text-sm md:text-md lg:text-lg">
                     {experience.position}
                   </span>
                 </div>
-                <div className="text-end text-sm italic">
+                <div className="text-end lg:text-sm md:text-sm text-xs italic">
                   <span className="font-light">
                     {experience.start} - {experience.end}
                   </span>
