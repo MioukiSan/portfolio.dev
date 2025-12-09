@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>  
+    <script src="http://localhost:8097"></script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/rnpalma/assets/pageLogo-BaZPmp0c.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Renz Palma - TechSavvy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <script type="module" crossorigin src="/rnpalma/assets/index-BIdWGqXn.js"></script>
+      <link rel="stylesheet" crossorigin href="/rnpalma/assets/index-Bkad91VK.css">
+    </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script>
+      (function () {
+        try {
+          const theme = localStorage.getItem("vite-ui-theme");
+          const prefersDark = window.matchMedia(
+            "(prefers-color-scheme: dark)"
+          ).matches;
+          const resolved =
+            theme === "dark" || (!theme && prefersDark)
+              ? "dark"
+              : theme === "light"
+              ? "light"
+              : prefersDark
+              ? "dark"
+              : "light";
+          document.documentElement.classList.add(resolved);
+        } catch (_) {}
+      })();
+</script>
+</html>
