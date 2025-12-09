@@ -9,7 +9,7 @@ function App() {
     <Router>
       <div className="font-lato">
         <Routes>
-          <Route path="/" element={<Hero />} />
+          <Route path="/rnpalma" element={<Hero />} />
           <Route path="/Portfolio" element={<AppInner />} />
         </Routes>
       </div>

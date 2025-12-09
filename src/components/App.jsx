@@ -20,7 +20,7 @@ const App = () => {
 
   useEffect(() => {
     if (!state?.danger) {
-      return navigate("/");
+      return navigate("/rnpalma");
     }
   }, []);
 
