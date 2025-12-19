@@ -10,7 +10,7 @@ import Skill from "@/components/pages/Skill";
 import Project from "@/components/pages/Project";
 import Certification from "@/components/pages/Certification";
 import Contact from "@/components/pages/Contact";
-
+import Snowfall from "react-snowfall";
 import HeroSmall from "@/components/HeroSmall";
 import Chatbox from "@/components/Chatbox";
 
@@ -93,6 +93,7 @@ const App = () => {
       </div>
 
       <div className="lg:basis-65/100 flex flex-col text-left">
+        <Snowfall />
         <section id="resume" ref={sections.resume}>
           <Resume />
         </section>

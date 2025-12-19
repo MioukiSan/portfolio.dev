@@ -3,10 +3,12 @@ import AppInner from "@/components/App";
 import ThemeChange from "@/components/themechange";
 import Preloading from "@/components/Preloading";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Snowfall from "react-snowfall";
 
 function App() {
   return (
     <Router>
+      <Snowfall />
       <div className="font-lato">
         <Routes>
           <Route path="/portfolio.dev" element={<Hero />} />
